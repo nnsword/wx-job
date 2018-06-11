@@ -1,9 +1,15 @@
 package cn.xo68.job.web.entity;
 
+import java.io.Serializable;
+
 /**
  * 任务实体
+ * @author wx
+ * @date 2018-6-11
  */
-public class QuartzJob {
+public class QuartzJob implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 	
 	private String jobName;//任务名称
 	private String jobGroup;//任务分组

@@ -7,7 +7,11 @@ import org.springframework.context.ApplicationContextAware;
 import org.springframework.scheduling.quartz.SpringBeanJobFactory;
 import org.springframework.stereotype.Component;
 
-
+/**
+ * quartzjob工厂
+ * @author wx
+ * @date 2018-6-11
+ */
 public class QuartzJobFactory extends SpringBeanJobFactory implements ApplicationContextAware {
 
         private transient AutowireCapableBeanFactory beanFactory;

@@ -16,7 +16,3 @@ spring:
     username: wyy
     password: 123456
     driver-class-name: com.mysql.jdbc.Driver
-  quartz:
-    job-store-type: jdbc
-    jdbc:
-      initialize-schema: always

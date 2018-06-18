@@ -19,6 +19,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.scheduling.quartz.SchedulerFactoryBean;
 
+import javax.sql.DataSource;
 import java.io.IOException;
 import java.util.Properties;
 
@@ -31,6 +32,9 @@ import java.util.Properties;
 @Configuration
 public class QuzrtzConfiguration {
 
+    @Autowired(required = false)
+    private DataSource dataSource;
+
     @Bean
     public JobFactory jobFactoryInstance(ApplicationContext applicationContext) {
         QuartzJobFactory jobFactory = new QuartzJobFactory();
@@ -41,10 +45,13 @@ public class QuzrtzConfiguration {
     @Bean
     public SchedulerFactoryBean schedulerFactoryBean(JobFactory jobFactory) {
         SchedulerFactoryBean factory = new SchedulerFactoryBean();
+        //factory.setDataSource(dataSource);
         factory.setAutoStartup(true);
         factory.setStartupDelay(5);//延时5秒启动
         factory.setQuartzProperties(quartzProperties());
+        factory.setOverwriteExistingJobs(false);
         factory.setJobFactory(jobFactory);
+        factory.setApplicationContextSchedulerContextKey("applicationContextSchedulerContextKey");
         return factory;
     }
 

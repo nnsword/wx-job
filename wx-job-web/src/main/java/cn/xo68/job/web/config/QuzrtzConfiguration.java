@@ -10,6 +10,8 @@ package cn.xo68.job.web.config;
 import org.quartz.Scheduler;
 import org.quartz.ee.servlet.QuartzInitializerListener;
 import org.quartz.spi.JobFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Required;
 import org.springframework.beans.factory.config.PropertiesFactoryBean;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
@@ -99,8 +101,10 @@ public class QuzrtzConfiguration {
     /*
      * 通过SchedulerFactoryBean获取Scheduler的实例
      */
+    @Autowired(required = false)
     @Bean
-    public Scheduler scheduler(JobFactory jobFactory){
-        return schedulerFactoryBean(jobFactory).getScheduler();
+    public Scheduler scheduler(SchedulerFactoryBean schedulerFactoryBean){
+        Scheduler scheduler= schedulerFactoryBean.getScheduler();
+        return scheduler;
     }
 }

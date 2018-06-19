@@ -8,5 +8,8 @@
     <artifactId>wx-job-project</artifactId>
     <version>1.0.0</version>
 
+    <modules>
+        <module>wx-job-web</module>
+    </modules>
 
 </project>

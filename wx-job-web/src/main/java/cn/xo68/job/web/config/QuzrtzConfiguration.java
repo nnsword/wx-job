@@ -101,7 +101,7 @@ public class QuzrtzConfiguration {
      * quartz初始化监听器
      */
     @Bean
-    public QuartzInitializerListener executorListener() {
+    public QuartzInitializerListener quartzInitializerListener() {
         return new QuartzInitializerListener();
     }
 

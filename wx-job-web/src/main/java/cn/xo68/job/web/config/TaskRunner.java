@@ -1,6 +1,6 @@
 package cn.xo68.job.web.config;
 
-import cn.xo68.job.web.entity.QuartzJob;
+import cn.xo68.boot.job.QuartzJob;
 import org.quartz.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,7 +22,7 @@ public class TaskRunner implements ApplicationRunner{
 	private final static Logger LOGGER = LoggerFactory.getLogger(TaskRunner.class);
 	
 
-	@Autowired
+	@Autowired(required = false)
     private Scheduler scheduler;
 	
     @SuppressWarnings({ "rawtypes", "unchecked" })

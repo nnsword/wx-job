@@ -1,4 +1,4 @@
-package cn.xo68.job.web.config;
+package cn.xo68.boot.job;
 
 import org.quartz.spi.TriggerFiredBundle;
 import org.springframework.beans.factory.config.AutowireCapableBeanFactory;

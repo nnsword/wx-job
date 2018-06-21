@@ -1,7 +1,9 @@
-package cn.xo68.job.web.common;
+package cn.xo68.boot.job.common;
 
 /**
  * Quartz常量
+ * @author wuxie
+ * @date 2018-6-21
  */
 public class QuartzContants {
 

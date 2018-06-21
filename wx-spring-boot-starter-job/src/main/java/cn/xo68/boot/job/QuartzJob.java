@@ -1,4 +1,4 @@
-package cn.xo68.job.web.entity;
+package cn.xo68.boot.job;
 
 import java.io.Serializable;
 

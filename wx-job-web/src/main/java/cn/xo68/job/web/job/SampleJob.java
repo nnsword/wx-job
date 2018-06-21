@@ -19,13 +19,14 @@ public class SampleJob implements  Job,Serializable {
 	@Override
 	public void execute(JobExecutionContext context) throws JobExecutionException {
 	    String jobName= (String) context.getMergedJobDataMap().get("jobName");
-        Object obj = (QuartzJob)context.getMergedJobDataMap().get("quartzJob");
-        if(obj!=null && obj instanceof QuartzJob){
-			QuartzJob quartzJob= (QuartzJob) obj;
-			logger.info("大吉大利、今晚吃鸡,jobName:{},jobGroup: {}", quartzJob.getJobName(), quartzJob.getJobGroup());
-		}else{
-			logger.info("大吉大利、今晚吃鸡,jobName:{}", jobName);
-		}
+//        Object obj = (QuartzJob)context.getMergedJobDataMap().get("quartzJob");
+//        if(obj!=null && obj instanceof QuartzJob){
+//			QuartzJob quartzJob= (QuartzJob) obj;
+//			logger.info("大吉大利、今晚吃鸡,jobName:{},jobGroup: {}", quartzJob.getJobName(), quartzJob.getJobGroup());
+//		}else{
+//			logger.info("大吉大利、今晚吃鸡,jobName:{}", jobName);
+//		}
+        logger.info("大吉大利、今晚吃鸡,jobName:{}", jobName);
 		//QuartzJob quartzJob
 
 	}

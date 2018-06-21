@@ -11,12 +11,7 @@ spring:
       charset: UTF-8
       enabled: true
       force: true
-  datasource:
-    url: jdbc:mysql://localhost:3306/wxjob?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8
-    username: wyy
-    password: 123456
-    driver-class-name: com.mysql.jdbc.Driver
-  quartz:
-    job-store-type: jdbc
-    jdbc:
-      initialize-schema: always
+wuxie:
+  job:
+    auto-startup: true
+    startup-delay: 10

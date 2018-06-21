@@ -28,6 +28,11 @@ public class JobProperties {
 
     private String applicationContextSchedulerContextKey="applicationContext";
 
+    /**
+     * 配置文件位置
+     */
+    private String quartzConfigLocation="classpath:quartz.properties";
+
 
     public boolean isEnabled() {
         return enabled;
@@ -67,5 +72,13 @@ public class JobProperties {
 
     public void setApplicationContextSchedulerContextKey(String applicationContextSchedulerContextKey) {
         this.applicationContextSchedulerContextKey = applicationContextSchedulerContextKey;
+    }
+
+    public String getQuartzConfigLocation() {
+        return quartzConfigLocation;
+    }
+
+    public void setQuartzConfigLocation(String quartzConfigLocation) {
+        this.quartzConfigLocation = quartzConfigLocation;
     }
 }

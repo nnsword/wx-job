@@ -35,7 +35,7 @@ public class JobAutoConfiguration {
         //factory.setDataSource(dataSource);
         factory.setAutoStartup(jobProperties.isAutoStartup());
         factory.setStartupDelay(jobProperties.getStartupDelay());
-        factory.setQuartzProperties(quartzProperties());
+        factory.setQuartzProperties(quartzProperties(jobProperties));
         factory.setOverwriteExistingJobs(jobProperties.isOverwriteExistingJobs());
         factory.setJobFactory(jobFactory);
         factory.setApplicationContextSchedulerContextKey(jobProperties.getApplicationContextSchedulerContextKey());
@@ -43,9 +43,9 @@ public class JobAutoConfiguration {
     }
 
     @Bean
-    public Properties quartzProperties() {
+    public Properties quartzProperties(JobProperties jobProperties) {
         PropertiesFactoryBean propertiesFactoryBean = new PropertiesFactoryBean();
-        propertiesFactoryBean.setLocation(new ClassPathResource("/quartz.properties"));
+        propertiesFactoryBean.setLocation(new ClassPathResource(jobProperties.getQuartzConfigLocation()));
         try {
             propertiesFactoryBean.afterPropertiesSet();
             return propertiesFactoryBean.getObject();

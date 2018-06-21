@@ -2,7 +2,8 @@ package cn.xo68.job.web.job;
 
 import java.io.Serializable;
 
-import cn.xo68.job.web.entity.QuartzJob;
+
+import cn.xo68.boot.job.QuartzJob;
 import org.quartz.Job;
 import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
